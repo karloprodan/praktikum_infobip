@@ -1,8 +1,20 @@
   
-const {trigramGenerator} =  require("../src/trigramGenerator");
+const { trigramGenerator } = require('./trigramGenerator.js');
+const fs = require('fs');
 
-const fs = require("fs");
-const fileName = "datoteka1.txt";
-var text = fs.readFileSync(fileName, "utf8");
+const readFile = 'datoteka1.txt';
+const writeFile = 'datoteka2.txt';
 
-console.log(trigramGenerator(text));
+const text = fs.readFileSync(`src/${readFile}`, 'utf8');
+
+const result = trigramGenerator(text);
+
+fs.writeFileSync(`src/${writeFile}`, buildOutput(result), 'utf8');
+console.log(result);
+
+function buildOutput(map) {
+  return Array.from(map).reduce(
+    (output, [key, value]) => (output += `'${key}' => [ '${value.join("', '")}' ],\n`),
+    ''
+  );
+}

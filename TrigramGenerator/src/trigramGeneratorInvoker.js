@@ -1,5 +1,4 @@
-  
-const { trigramGenerator } = require('./trigramGenerator.js');
+const { trigramGenerator } = require('../src/trigramGenerator.js');
 const fs = require('fs');
 
 const readFile = 'datoteka1.txt';

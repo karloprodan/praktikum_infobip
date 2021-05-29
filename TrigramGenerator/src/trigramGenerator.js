@@ -42,9 +42,14 @@ function generateTrigrams(chunks) {
   }, new Map());
 }
 
+function dvigramGenerator() {
+
+}
+
 module.exports = {
   trigramGenerator,
   generateChunks,
   interpunctionHandler,
   whitespaceHandler,
+  dvigramGenerator
 };

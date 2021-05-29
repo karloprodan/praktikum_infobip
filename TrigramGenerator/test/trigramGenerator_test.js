@@ -6,6 +6,7 @@ const {
   generateChunks,
   interpunctionHandler,
   whitespaceHandler,
+  dvigramGenerator,
 } = require('../src/trigramGenerator.js');
 
 describe('#trigramGenerator()', function () {
@@ -172,3 +173,17 @@ describe('#generateChunks()', function () {
   });
 });
 
+
+describe('Dvigram generator', function () {
+    it('dvigramGenerator should be a function', function () {
+      expect(dvigramGenerator).to.be.a("function")
+    });
+  });
+
+  it(`should return correct dvigram for 1 words input`, function () {
+    expect(dvigramGenerator('I')).to.eql(new Map());
+  });
+
+  it(`should return correct dvigram for 2 words input`, function () {
+    expect(dvigramGenerator('I wish')).to.eql(new Map([['I', ['wish']]]));
+  });

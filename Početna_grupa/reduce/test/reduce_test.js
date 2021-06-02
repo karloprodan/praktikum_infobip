@@ -20,6 +20,7 @@ describe("Reduce tests", function () {
       (max, curr) => (curr < max ? curr : max),
       brojevi[0]
     );
+
     expect(maxBroj).to.equal(11);
   });
 
@@ -28,9 +29,9 @@ describe("Reduce tests", function () {
 
     const average = numbers.reduce((total, amount, index, array) => {
       total += amount;
-      if (index === array.length - 1) return total / array.length;
-      else return total;
+      return index === array.length - 1 ? total / array.length : total;
     });
+
     expect(average).to.equal(4);
   });
 
@@ -40,6 +41,7 @@ describe("Reduce tests", function () {
       (max, current) => (current > max ? current : max),
       dates[0]
     );
+
     expect(maxDate).to.equal("01.01.2003.");
   });
 
@@ -49,6 +51,7 @@ describe("Reduce tests", function () {
       [3, 4, 5],
       [6, 7],
     ].reduce((prev, curr) => prev.concat(curr), []);
+
     expect(flattened).to.eql([1, 2, 3, 4, 5, 6, 7]);
   });
 
@@ -67,10 +70,12 @@ describe("Reduce tests", function () {
   });
 
   it("is expected to return total years of experience of all pilots", function () {
+
     expect(totalYears).to.eql(82);
   });
 
   it("should return which pilot has the most experience", function () {
+    
     expect(mostExpPilot).to.eql({
       id: 72,
       name: "Nicholas Cage",

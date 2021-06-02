@@ -11,8 +11,7 @@ function getSquareRoots(num) {
 }
 
 function isNumberEven(num) {
-  if (num % 2 == 0) return "true";
-  else return "false";
+  return num % 2 === 0 ? "true" : "false";
 }
 
 function evenTimesTwo(numArray) {
@@ -29,10 +28,9 @@ function setFirstLetterUp(wordsArray) {
 }
 
 function checkIfOldEnough(students) {
-  if (students.age >= 18) {
-    return students.name + " is old enough to buy alcohol.";
-  }
-  else return students.name + " is under age!";
+  return students.age >= 18
+    ? students.name + " is old enough to buy alcohol."
+    : students.name + " is under age!";
 }
 
 module.exports = {
@@ -43,5 +41,5 @@ module.exports = {
   getFullName,
   getDouble,
   setFirstLetterUp,
-  checkIfOldEnough
+  checkIfOldEnough,
 };

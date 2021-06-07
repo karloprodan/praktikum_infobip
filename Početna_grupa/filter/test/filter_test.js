@@ -33,4 +33,33 @@ describe("Filter tests", function () {
 
     expect(numbersByThree).to.eql([3, 12, 36, 99]);
   });
+
+  it("should return numbers that are greater than 10 or equal", function () {
+    let numbers = [2, 5, 7, 10, 13, 19, 20];
+    const tenAndGreaterOnly  = numbers.filter((number) => number >= 10);
+
+    expect(tenAndGreaterOnly).to.eql([10, 13, 19, 20]);
+  });
+
+  it("should filter positive numbers and return their sum", function () {
+    let numbers = [1, -4, 12, 0, -3, 29, -150];
+
+    let sumOfPosNum = numbers.filter((num) => num >= 0).reduce((accu, curr) => accu + curr, 0);
+
+    expect(sumOfPosNum).to.equal(42);
+  });
+
+  it("should return students whose grades are greater than or equal to 90", function () {
+    let students = [
+      { ime: "Katja", ocjena: 94 },
+      { ime: "Karlo", ocjena: 90 },
+      { ime: "Ema", ocjena: 87 },
+      { ime: "Ivan", ocjena: 75 },
+      { ime: "Neven", ocjena: 66 }
+    ];
+    let studentsGrades = students.filter((student) => student.ocjena >= 90);
+
+    expect(studentsGrades).to.eql([{ime: "Katja", ocjena: 94}, {ime: "Karlo", ocjena: 90}]);
+  });
+
 });

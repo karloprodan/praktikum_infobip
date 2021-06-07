@@ -94,4 +94,11 @@ describe("Map tests", function () {
   expect(students18).to.eql(["Johnny Depp is old enough to buy alcohol.", "Danzig is under age!", "Walter White is old enough to buy alcohol.", "Margot Robbie is under age!"]);
 
   });
+
+  it("should return the initals of all names", function () {
+    let names = 'Nina Ivana Jelena Edi Barbara Ema David';
+    const rez = names.split(' ').map(word => word[0]).join('');
+
+    expect(rez).to.equal('NIJEBED');
+  });
 });

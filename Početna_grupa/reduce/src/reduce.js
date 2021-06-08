@@ -56,7 +56,7 @@ const mostExpPilot = pilots.reduce((oldest, pilot) => {
 
 
 // should return n! of given number
-let input = 4;
+let input = 5;
 const factorialNum = new Array(input).fill(null).map((currValue, index) => index + 1).reduce((accu, curr) => accu * curr);
 
 module.exports = { countedFruits, sortiranoPoljeSlova, totalYears, mostExpPilot, factorialNum };

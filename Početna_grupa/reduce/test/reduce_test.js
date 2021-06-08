@@ -85,6 +85,6 @@ describe("Reduce tests", function () {
   });
 
   it("should return n! of given number", function () {
-    expect(factorialNum).to.equal(24);
+    expect(factorialNum).to.equal(120);
   });
 });

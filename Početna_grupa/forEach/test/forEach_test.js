@@ -24,4 +24,12 @@ describe("forEach tests", function () {
 
     expect(resArr).to.eql(["Hello John", "Hello Sara", "Hello Jack"]);
   });
+
+  it("should return the value of the numbers to the power of 3", function () {
+    let numbers = [1, 4, 9, 25, 50];
+    const powNumbers = [];
+    numbers.forEach((num) => powNumbers.push(Math.pow(num, 3)));
+
+    expect(powNumbers).to.eql([1, 64, 729, 15625, 125000]);
+  });
 });
